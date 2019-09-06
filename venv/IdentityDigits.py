@@ -64,3 +64,4 @@ dataSet,labels=readFile(".\digits\\trainingDigits")
 # print(dataSet)
 testDigits=getTest(".\digits\\testDigits",dataSet)
 
+ssss
