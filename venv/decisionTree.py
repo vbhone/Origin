@@ -1,11 +1,15 @@
-
+from math import log
 def getEntropy(dataSet):
     dirFeature={}
     for example in dataSet:
-        if example[-1] not in dirFeature.key():
+        if example[-1] not in dirFeature.keys():
             dirFeature[example[-1]]=0
         dirFeature[example[-1]]+=1
-
+    feature=0.0
+    for key in dirFeature:
+        prob = float(dirFeature[key])/len(dataSet)
+        feature-=prob * log(prob,2)
+    return feature
 
 
 
@@ -13,7 +17,15 @@ def getEntropy(dataSet):
 def chooseBestFeatureToSplit(dataSet):
     dataSize=len(dataSet[0])-1
     initBestFeature=getEntropy(dataSet)
+    bestInfo=0
+    bestFeature=-1
     for i in range(dataSize):
+        featList=[example[i] for example in dataSet]
+        uniqueVal=set(featList)
+        newEntropy
+        for value in
+    return bestInfo
+
 
 
 def splitDataSet(dataSet,axis,value):
