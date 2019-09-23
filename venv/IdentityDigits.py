@@ -24,13 +24,12 @@ def readFile(filename):
         # print(filecontend)
         # print("\n")
         singleData=list(map(int,filecontend))
-        print(i)
         dataSet[index:]=singleData
-        print(i)
         index+=1
     return dataSet,labels
 
 def judge(testDigit,dataSet):
+    f=open("out.txt","a+")
     dataSize=dataSet.shape[0]
     testTwo=tile(testDigit,(dataSize,1))
     testTwo=testTwo-dataSet
@@ -43,7 +42,8 @@ def judge(testDigit,dataSet):
         voteIlabel=labels[testTwo[i]]
         classCount[voteIlabel]=classCount.get(voteIlabel,0)+1
     sortedClassCount=sorted(classCount.items(),key=operator.itemgetter(1),reverse=True)
-    print(sortedClassCount[0][0])
+    print(sortedClassCount[0][0],file=f)
+
 
 
 def getTest(filename,dataSet):
@@ -62,5 +62,4 @@ def getTest(filename,dataSet):
 
 dataSet,labels=readFile(".\digits\\trainingDigits")
 # print(dataSet)
-testDigits=getTest(".\digits\\testDigits",dataSet)
-
+testDigits=getTest(".\digits\\testDigits\sss",dataSet)
