@@ -20,9 +20,8 @@ print(sortedgroup)
 classCount={}
 
 
-# for i in range(3):
-voteIlabel=labels[sortedgroup[0]]
-classCount[voteIlabel]=classCount.get([voteIlabel],0)+1
-# sortedClassCount=sorted(ClassCount.items(),key=operator.itemgetter(1),reverse=True)
-# print(sortedClassCount[0][0])
-
+for i in range(3):
+    voteIlabel=labels[sortedgroup[0]]
+    classCount[voteIlabel]=classCount.get([voteIlabel],0)+1
+sortedClassCount=sorted(ClassCount.items(),key=operator.itemgetter(1),reverse=True)
+print(sortedClassCount[0][0])
